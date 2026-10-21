@@ -1,0 +1,70 @@
+<header class="hero wrap" id="top">
+  <div class="inner">
+    <div class="hero-top">
+      <div>
+        <p class="eyebrow">Robotics · Embodied AI · AI agents · LLMs</p>
+        <h1 class="name">Jiajun Gao<span class="name-zh" lang="zh-CN">高嘉骏</span></h1>
+      </div>
+      <img class="avatar" src="assets/jiajun-gao.jpg" width="640" height="640" alt="Jiajun Gao wearing sunglasses in front of a mountain lake">
+    </div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="intro">I'm a first-year M.S. student in Electrical and Computer Engineering at the University of Illinois Urbana-Champaign, where I also earned my B.S. in Computer Engineering with High Honors. I'm also a teaching assistant for ECE 385: Digital Systems Laboratory. I led the team behind <a href="projects.html#jarvis">Jarvis</a>, a talking desktop robot that made the ECE 445 Hall of Fame, and in 2025 I built robot simulation tools as an algorithm intern at Shanghai AI Laboratory.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:jiajung3@illinois.edu">Email me</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+          <a class="btn" href="projects.html">See my projects →</a>
+        </div>
+        <dl class="facts">
+          <div><dt>Now</dt><dd>M.S. ECE and ECE 385 TA · Illinois</dd></div>
+          <div><dt>Undergrad</dt><dd>B.S. Computer Engineering · GPA 3.92 / 4.00</dd></div>
+          <div><dt>Focus</dt><dd>Embodied AI, AI agents, LLMs, robotics</dd></div>
+          <div><dt>Based in</dt><dd>Champaign, Illinois</dd></div>
+        </dl>
+      </div>
+
+      <figure class="bot">
+        <div class="housing">
+          <button class="screen screen-lg" id="jarvis-face" type="button" data-mood="neutral" aria-label="Jarvis's face. Press to change its expression.">
+            <span class="eyes"><span class="eye"></span><span class="eye"></span></span>
+            <span class="scan" aria-hidden="true"></span>
+          </button>
+          <div class="sensors" aria-hidden="true"><span class="ir"></span><span>IR</span><span class="ir"></span></div>
+        </div>
+        <div class="log">
+          <div class="log-head"><span><span class="led"></span>Serial monitor · simulated</span><span>115200 baud</span></div>
+          <div class="log-body" id="log" role="log" aria-label="Simulated Jarvis log">
+            <div class="ln"><span class="lv">I</span><span class="tk"> (1204) </span><span class="tag">wake:</span><span class="msg"> "hey jarvis" detected (offline)</span></div>
+            <div class="ln"><span class="lv">I</span><span class="tk"> (1211) </span><span class="tag">ws:</span><span class="msg"> streaming mic audio</span></div>
+            <div class="ln"><span class="lv">I</span><span class="tk"> (2876) </span><span class="tag">asr:</span><span class="msg"> "can you come a bit closer?"</span></div>
+            <div class="ln"><span class="lv">I</span><span class="tk"> (3420) </span><span class="tag">llm:</span><span class="msg"> reply + action request</span></div>
+            <div class="ln"><span class="lv">I</span><span class="tk"> (4610) </span><span class="tag">tts:</span><span class="msg"> first audio out</span></div>
+            <div class="ln"><span class="lv">I</span><span class="tk"> (4652) </span><span class="tag">mcp:</span><span class="msg"> drive.forward(20 cm) requested</span></div>
+            <div class="ln w"><span class="lv">W</span><span class="tk"> (4659) </span><span class="tag">arbiter:</span><span class="msg"> cliff sensor tripped, motion vetoed</span></div>
+          </div>
+        </div>
+        <figcaption>A recreation of Jarvis's LCD face. It follows your cursor; tap it to change its mood.</figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section wrap" id="explore">
+    <div class="inner">
+      <div class="sec-label">
+        <h2 class="sec-title">Explore</h2>
+        <p class="sec-meta">One page for each part of my work</p>
+      </div>
+      <div class="sec-body">
+        <div class="page-index">
+          <a class="pl" href="projects.html"><span class="pl-name">Projects</span><span class="pl-desc">Jarvis, the ECE 445 Hall of Fame robot, plus retrieval-augmented LLMs, a self-driving GEM vehicle, and loan approval modeling.</span><span class="pl-go" aria-hidden="true">→</span></a>
+          <a class="pl" href="experience.html"><span class="pl-name">Experience</span><span class="pl-desc">Teaching assistant for ECE 385, algorithm intern at Shanghai AI Laboratory, and FPGA systems at the Digital Systems Design Lab.</span><span class="pl-go" aria-hidden="true">→</span></a>
+          <a class="pl" href="research.html"><span class="pl-name">Research</span><span class="pl-desc">A published comparison of WGAN-GP and WGAN-CP for image generation.</span><span class="pl-go" aria-hidden="true">→</span></a>
+          <a class="pl" href="education.html"><span class="pl-name">Education</span><span class="pl-desc">M.S. ECE in progress and a B.S. in Computer Engineering with High Honors, both at Illinois.</span><span class="pl-go" aria-hidden="true">→</span></a>
+          <a class="pl" href="skills.html"><span class="pl-name">Skills</span><span class="pl-desc">LLMs and agents, machine learning, robotics, data, and hardware tools.</span><span class="pl-go" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

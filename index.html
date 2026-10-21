@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Jiajun Gao (高嘉骏) is a computer engineer and M.S. ECE student at the University of Illinois Urbana-Champaign working on robotics, embodied AI, AI agents, and LLMs.">
+<meta name="author" content="Jiajun Gao">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jiajun Gao">
+<meta property="og:description" content="Jiajun Gao (高嘉骏) is a computer engineer and M.S. ECE student at the University of Illinois Urbana-Champaign working on robotics, embodied AI, AI agents, and LLMs.">
+<meta name="theme-color" content="#F2F4F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1311" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2308100D'/%3E%3Crect x='8' y='9' width='6' height='14' rx='2' fill='%2393F2CF'/%3E%3Crect x='18' y='9' width='6' height='14' rx='2' fill='%2393F2CF'/%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Jiajun Gao</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&text=%E9%AB%98%E5%98%89%E9%AA%8F&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+
+<nav class="nav wrap" aria-label="Main">
+  <div class="inner">
+    <a class="brand" href="index.html" aria-label="Jiajun Gao, home">
+      <span class="screen screen-mini" data-mood="neutral" aria-hidden="true"><span class="eyes"><span class="eye"></span><span class="eye"></span></span></span>
+      <span>Jiajun Gao</span>
+    </a>
+    <div class="nav-links">
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="research.html">Research</a>
+      <a href="education.html">Education</a>
+      <a href="skills.html">Skills</a>
+    </div>
+    <a class="btn btn-sm nav-cta" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+  </div>
+</nav>
+
+<header class="hero wrap" id="top">
+  <div class="inner">
+    <div class="hero-top">
+      <div>
+        <p class="eyebrow">Robotics · Embodied AI · AI agents · LLMs</p>
+        <h1 class="name">Jiajun Gao<span class="name-zh" lang="zh-CN">高嘉骏</span></h1>
+      </div>
+      <img class="avatar" src="assets/jiajun-gao.jpg" width="640" height="640" alt="Jiajun Gao wearing sunglasses in front of a mountain lake">
+    </div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="intro">I'm a first-year M.S. student in Electrical and Computer Engineering at the University of Illinois Urbana-Champaign, where I also earned my B.S. in Computer Engineering with High Honors. I'm also a teaching assistant for ECE 385: Digital Systems Laboratory. I led the team behind <a href="projects.html#jarvis">Jarvis</a>, a talking desktop robot that made the ECE 445 Hall of Fame, and in 2025 I built robot simulation tools as an algorithm intern at Shanghai AI Laboratory.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:jiajung3@illinois.edu">Email me</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+          <a class="btn" href="projects.html">See my projects →</a>
+        </div>
+        <dl class="facts">
+          <div><dt>Now</dt><dd>M.S. ECE and ECE 385 TA · Illinois</dd></div>
+          <div><dt>Undergrad</dt><dd>B.S. Computer Engineering · GPA 3.92 / 4.00</dd></div>
+          <div><dt>Focus</dt><dd>Embodied AI, AI agents, LLMs, robotics</dd></div>
+          <div><dt>Based in</dt><dd>Champaign, Illinois</dd></div>
+        </dl>
+      </div>
+
+      <figure class="bot">
+        <div class="housing">
+          <button class="screen screen-lg" id="jarvis-face" type="button" data-mood="neutral" aria-label="Jarvis's face. Press to change its expression.">
+            <span class="eyes"><span class="eye"></span><span class="eye"></span></span>
+            <span class="scan" aria-hidden="true"></span>
+          </button>
+          <div class="sensors" aria-hidden="true"><span class="ir"></span><span>IR</span><span class="ir"></span></div>
+        </div>
+        <div class="log">
+          <div class="log-head"><span><span class="led"></span>Serial monitor · simulated</span><span>115200 baud</span></div>
+          <div class="log-body" id="log" role="log" aria-label="Simulated Jarvis log">
+            <div class="ln"><span class="lv">I</span><span class="tk"> (1204) </span><span class="tag">wake:</span><span class="msg"> "hey jarvis" detected (offline)</span></div>
+            <div class="ln"><span class="lv">I</span><span class="tk"> (1211) </span><span class="tag">ws:</span><span class="msg"> streaming mic audio</span></div>
+            <div class="ln"><span class="lv">I</span><span class="tk"> (2876) </span><span class="tag">asr:</span><span class="msg"> "can you come a bit closer?"</span></div>
+            <div class="ln"><span class="lv">I</span><span class="tk"> (3420) </span><span class="tag">llm:</span><span class="msg"> reply + action request</span></div>
+            <div class="ln"><span class="lv">I</span><span class="tk"> (4610) </span><span class="tag">tts:</span><span class="msg"> first audio out</span></div>
+            <div class="ln"><span class="lv">I</span><span class="tk"> (4652) </span><span class="tag">mcp:</span><span class="msg"> drive.forward(20 cm) requested</span></div>
+            <div class="ln w"><span class="lv">W</span><span class="tk"> (4659) </span><span class="tag">arbiter:</span><span class="msg"> cliff sensor tripped, motion vetoed</span></div>
+          </div>
+        </div>
+        <figcaption>A recreation of Jarvis's LCD face. It follows your cursor; tap it to change its mood.</figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section wrap" id="explore">
+    <div class="inner">
+      <div class="sec-label">
+        <h2 class="sec-title">Explore</h2>
+        <p class="sec-meta">One page for each part of my work</p>
+      </div>
+      <div class="sec-body">
+        <div class="page-index">
+          <a class="pl" href="projects.html"><span class="pl-name">Projects</span><span class="pl-desc">Jarvis, the ECE 445 Hall of Fame robot, plus retrieval-augmented LLMs, a self-driving GEM vehicle, and loan approval modeling.</span><span class="pl-go" aria-hidden="true">→</span></a>
+          <a class="pl" href="experience.html"><span class="pl-name">Experience</span><span class="pl-desc">Teaching assistant for ECE 385, algorithm intern at Shanghai AI Laboratory, and FPGA systems at the Digital Systems Design Lab.</span><span class="pl-go" aria-hidden="true">→</span></a>
+          <a class="pl" href="research.html"><span class="pl-name">Research</span><span class="pl-desc">A published comparison of WGAN-GP and WGAN-CP for image generation.</span><span class="pl-go" aria-hidden="true">→</span></a>
+          <a class="pl" href="education.html"><span class="pl-name">Education</span><span class="pl-desc">M.S. ECE in progress and a B.S. in Computer Engineering with High Honors, both at Illinois.</span><span class="pl-go" aria-hidden="true">→</span></a>
+          <a class="pl" href="skills.html"><span class="pl-name">Skills</span><span class="pl-desc">LLMs and agents, machine learning, robotics, data, and hardware tools.</span><span class="pl-go" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="contact wrap" id="contact">
+  <div class="inner">
+    <p class="eyebrow">Contact</p>
+    <h2 class="contact-title">Let's build something that moves.</h2>
+    <p class="contact-copy">I'm always glad to talk about robotics, embodied AI, AI agents, and LLMs.</p>
+    <div class="email-row">
+      <a class="email" id="email" href="mailto:jiajung3@illinois.edu">jiajung3@illinois.edu</a>
+      <button class="btn btn-invert" type="button" data-copy="jiajung3@illinois.edu" aria-controls="email">Copy</button>
+      <a class="btn btn-invert" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+    </div>
+    <blockquote class="epigraph">
+      <p>“Do not go gentle into that good night.”</p>
+      <cite>Dylan Thomas</cite>
+    </blockquote>
+    <div class="foot">
+      <span>© 2026 Jiajun Gao · Champaign, Illinois</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</html>

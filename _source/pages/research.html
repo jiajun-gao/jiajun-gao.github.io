@@ -1,0 +1,33 @@
+<header class="page-head wrap" id="top">
+  <div class="inner">
+    <p class="eyebrow crumb"><a href="index.html">Home</a> / Research</p>
+    <h1 class="page-title">Research</h1>
+    <p class="page-lede">A published study on training Wasserstein GANs.</p>
+  </div>
+</header>
+
+<main>
+  <section class="section wrap" id="wgan">
+    <div class="inner">
+      <div class="sec-label">
+        <h2 class="sec-title">WGAN-GP vs. WGAN-CP</h2>
+        <p class="sec-meta">Summer research project<br>Shanghai · Jul 2024</p>
+      </div>
+      <div class="sec-body">
+        <p class="headline">Gradient penalty versus weight clipping for Wasserstein GANs.</p>
+        <p class="lede">I led a summer research project supervised by Prof. Mark Vogelsberger (MIT) that compared the two standard ways of enforcing the Lipschitz constraint in a Wasserstein GAN. I implemented WGAN-GP and WGAN-CP in PyTorch and measured training stability, convergence, FID, and Inception Score on CIFAR-10 and Fashion-MNIST.</p>
+        <dl class="spec">
+          <dt>Finding</dt><dd>WGAN-GP produced better images at a higher computational cost</dd>
+          <dt>Datasets</dt><dd>CIFAR-10, Fashion-MNIST</dd>
+          <dt>Metrics</dt><dd>FID, Inception Score, stability, convergence</dd>
+        </dl>
+        <article class="panel cite">
+          <p class="eyebrow">Published paper · 2024</p>
+          <h3><a href="https://doi.org/10.54254/2755-2721/83/2024GLG0059" target="_blank" rel="noopener">A comparative study between WGAN-GP and WGAN-CP for image generation ↗</a></h3>
+          <p class="cite-line">Jiajun Gao · <em>Applied and Computational Engineering</em></p>
+          <p class="doi">doi:10.54254/2755-2721/83/2024GLG0059</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>

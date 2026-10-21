@@ -1,0 +1,215 @@
+<header class="page-head wrap" id="top">
+  <div class="inner">
+    <p class="eyebrow crumb"><a href="index.html">Home</a> / Projects</p>
+    <h1 class="page-title">Projects</h1>
+    <p class="page-lede">Robots, language models, autonomous driving, and statistics, starting with Jarvis.</p>
+  </div>
+</header>
+
+<main>
+  <section class="section wrap" id="jarvis">
+    <div class="inner">
+      <div class="sec-label">
+        <h2 class="sec-title">Jarvis</h2>
+        <p class="sec-meta">Featured · ECE 445 Senior Design<br>Spring 2026</p>
+      </div>
+      <div class="sec-body">
+        <p class="headline">A desktop robot that talks, emotes, and knows where the table ends.</p>
+        <ul class="badges">
+          <li class="badge badge-key">ECE 445 Hall of Fame</li>
+          <li class="badge badge-key">Grainger Engineering Senior Design Competition finalist</li>
+          <li class="badge">Team lead · 3 people</li>
+        </ul>
+        <p class="lede">Jarvis is an ESP32-S3 companion robot that holds a spoken conversation, shows expressions on an LCD face, and drives around a desk. I came up with the concept, designed the end-to-end architecture, and built the AI and software pipeline.</p>
+
+        <div class="rule-quote">
+          <p class="eyebrow">Design rule</p>
+          <p class="quote">The language model never drives the motors. It can only ask. The ESP32 decides, and the obstacle and cliff sensors can veto any request.</p>
+        </div>
+
+        <figure class="panel">
+          <div class="scroll-x">
+            <svg class="dg" viewBox="0 0 960 330" role="img" aria-labelledby="dg-title dg-desc">
+              <title id="dg-title">Jarvis voice and motion pipeline</title>
+              <desc id="dg-desc">The voice path runs from wake word to audio stream, VAD and ASR, Gemini 2.5 Flash, Edge TTS, and the speaker. Gemini can also send an MCP action request, which crosses a safety boundary to the ESP32 arbiter. The arbiter also takes input from the IR obstacle and cliff sensors and from browser control mode, and either lets the motor drivers move or vetoes the request.</desc>
+              <defs>
+                <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path class="ah" d="M0 1 L10 5 L0 9 Z"/>
+                </marker>
+              </defs>
+
+              <text class="lane" x="10" y="24">VOICE PATH</text>
+              <rect class="node" x="10" y="36" width="128" height="60" rx="8"/>
+              <text class="t" x="74" y="62" text-anchor="middle">Wake word</text>
+              <text class="s" x="74" y="80" text-anchor="middle">offline</text>
+              <rect class="node" x="170" y="36" width="128" height="60" rx="8"/>
+              <text class="t" x="234" y="62" text-anchor="middle">Audio stream</text>
+              <text class="s" x="234" y="80" text-anchor="middle">WebSocket</text>
+              <rect class="node" x="330" y="36" width="128" height="60" rx="8"/>
+              <text class="t" x="394" y="62" text-anchor="middle">VAD + ASR</text>
+              <text class="s" x="394" y="80" text-anchor="middle">speech to text</text>
+              <rect class="node" x="490" y="36" width="128" height="60" rx="8"/>
+              <text class="t" x="554" y="62" text-anchor="middle">Gemini 2.5 Flash</text>
+              <text class="s" x="554" y="80" text-anchor="middle">reply + actions</text>
+              <rect class="node" x="650" y="36" width="128" height="60" rx="8"/>
+              <text class="t" x="714" y="62" text-anchor="middle">Edge TTS</text>
+              <text class="s" x="714" y="80" text-anchor="middle">streamed</text>
+              <rect class="node" x="810" y="36" width="128" height="60" rx="8"/>
+              <text class="t" x="874" y="62" text-anchor="middle">Speaker</text>
+              <text class="s" x="874" y="80" text-anchor="middle">2.01 s median</text>
+
+              <path class="wire" d="M138 66 H168" marker-end="url(#ah)"/>
+              <path class="wire" d="M298 66 H328" marker-end="url(#ah)"/>
+              <path class="wire" d="M458 66 H488" marker-end="url(#ah)"/>
+              <path class="wire" d="M618 66 H648" marker-end="url(#ah)"/>
+              <path class="wire" d="M778 66 H808" marker-end="url(#ah)"/>
+
+              <path class="wire" d="M554 96 V126" marker-end="url(#ah)"/>
+              <rect class="node" x="490" y="128" width="128" height="48" rx="8"/>
+              <text class="t" x="554" y="150" text-anchor="middle">MCP request</text>
+              <text class="s" x="554" y="166" text-anchor="middle">robot action</text>
+
+              <line class="boundary" x1="10" y1="204" x2="950" y2="204"/>
+              <text class="bl" x="10" y="196">SAFETY BOUNDARY</text>
+              <text class="bn" x="950" y="196" text-anchor="end">model output is only a request</text>
+              <path class="wire" d="M554 176 V230" marker-end="url(#ah)"/>
+              <circle class="dot" cx="554" cy="204" r="4"/>
+
+              <text class="lane" x="10" y="228">MOTION PATH</text>
+              <rect class="node" x="170" y="232" width="210" height="36" rx="8"/>
+              <text class="t" x="275" y="255" text-anchor="middle">IR obstacle + cliff sensors</text>
+              <rect class="node" x="170" y="280" width="210" height="36" rx="8"/>
+              <text class="t" x="275" y="303" text-anchor="middle">Browser control mode</text>
+              <path class="wire" d="M380 250 H488" marker-end="url(#ah)"/>
+              <path class="wire" d="M380 298 H488" marker-end="url(#ah)"/>
+
+              <rect class="node-key" x="490" y="232" width="128" height="84" rx="8"/>
+              <text class="t" x="554" y="268" text-anchor="middle">ESP32 arbiter</text>
+              <text class="s" x="554" y="286" text-anchor="middle">allow or veto</text>
+
+              <path class="wire" d="M618 274 H648" marker-end="url(#ah)"/>
+              <rect class="node" x="650" y="246" width="128" height="56" rx="8"/>
+              <text class="t" x="714" y="270" text-anchor="middle">Motor drivers</text>
+              <text class="s" x="714" y="288" text-anchor="middle">only if allowed</text>
+            </svg>
+          </div>
+          <figcaption>How a spoken request turns into speech and motion. The model's action requests cross the safety boundary only as requests; the ESP32 arbiter, with live sensor input, decides whether the motors move.</figcaption>
+        </figure>
+
+        <div class="readouts">
+          <div class="readout"><p class="val">2.01<small>s</small></p><p class="what">Median ASR-to-first-audio latency over a 24-turn session (mean 2.50 s)</p></div>
+          <div class="readout"><p class="val">100<small>%</small></p><p class="what">MCP action and TTS success in the same session</p></div>
+          <div class="readout"><p class="val">100<small>%</small></p><p class="what">Cliff detection across repeated 10-minute motion tests</p></div>
+          <div class="readout"><p class="val">2</p><p class="what">Custom PCBs, Face and Body, brought up and validated</p></div>
+        </div>
+
+        <div class="split">
+          <div>
+            <h3 class="eyebrow">What I built</h3>
+            <ul class="points">
+              <li>The voice pipeline: offline wake-word detection, WebSocket audio streaming, VAD and ASR, Gemini 2.5 Flash responses, streamed Edge TTS, and MCP-based robot actions.</li>
+              <li>The safety layer: ESP32 arbitration, IR obstacle and cliff sensing, motion vetoes, and separate AI and browser-control modes.</li>
+              <li>Integration and bring-up across the Face and Body PCBs, LCD expressions, audio, Wi-Fi, motor drivers, battery power, and sensors.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="eyebrow">Stack</h3>
+            <ul class="chips">
+              <li class="chip">ESP32-S3</li>
+              <li class="chip">WebSocket</li>
+              <li class="chip">VAD / ASR</li>
+              <li class="chip">Gemini 2.5 Flash</li>
+              <li class="chip">Edge TTS</li>
+              <li class="chip">MCP</li>
+              <li class="chip">Custom PCBs</li>
+              <li class="chip">IR sensing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="more">
+    <div class="inner">
+      <div class="sec-label">
+        <h2 class="sec-title">More projects</h2>
+        <p class="sec-meta">LLMs, autonomy, statistics</p>
+      </div>
+      <div class="sec-body">
+        <div class="proj-grid">
+          <article class="proj proj-wide">
+            <div>
+              <p class="proj-top"><span>LLMs · Retrieval</span><span>Python · PyTorch · vLLM · Hugging Face · Qwen</span></p>
+              <h3>Retrieval-augmented QA under knowledge edits</h3>
+              <p class="desc">A RAG pipeline for multi-hop question answering over a counterfactual knowledge base of 371 edited facts. BM25 and dense Qwen3-Embedding retrievers feed a Qwen2.5-3B generator.</p>
+              <ul class="points">
+                <li>Cosine-similarity and BM25 retrieval with deterministic top-k ranking that stays the same when the corpus is reordered.</li>
+                <li>A structured-output prompt raised answer accuracy 3.7× with zero JSON parse failures across 568 generations.</li>
+                <li>Compared context sizes of k = 0, 1, 4, and 8, used gold-evidence (oracle) runs to diagnose failures, and tested robustness to fact edits and answer-order changes.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="bars" role="img" aria-label="Answer accuracy: 11.7% with the original prompt, 43.8% with the structured-output prompt, and 36.7% with excess context.">
+                <p class="eyebrow">Answer accuracy</p>
+                <div class="bar-row"><span class="bar-lbl">Original prompt</span><span class="bar-track"><span class="bar" style="--v: 11.7"></span></span><span class="bar-val">11.7%</span></div>
+                <div class="bar-row"><span class="bar-lbl">Structured output</span><span class="bar-track"><span class="bar bar-key" style="--v: 43.8"></span></span><span class="bar-val">43.8%</span></div>
+                <div class="bar-row"><span class="bar-lbl">Excess context</span><span class="bar-track"><span class="bar" style="--v: 36.7"></span></span><span class="bar-val">36.7%</span></div>
+                <div class="bar-axis" aria-hidden="true"><span class="ticks"><span>0</span><span>25%</span><span>50%</span></span><span></span></div>
+                <p class="bars-note">More retrieved context past the best setting lowered accuracy.</p>
+              </div>
+              <dl class="spec">
+                <dt>Hit@4</dt><dd>87.5%</dd>
+                <dt>Accuracy gain</dt><dd>3.7× (11.7% → 43.8%)</dd>
+                <dt>JSON failures</dt><dd>0 of 568 generations</dd>
+              </dl>
+            </div>
+          </article>
+
+          <article class="proj">
+            <p class="proj-top"><span>Autonomous driving · ECE 484</span><span>Fall 2025</span></p>
+            <h3>Self-driving and self-parking on a real GEM vehicle</h3>
+            <p class="desc">Perception, control, decision logic, and self-parking for a GEM electric vehicle, built on ROS and tested on hardware.</p>
+            <dl class="spec">
+              <dt>Control</dt><dd>Hybrid Pure Pursuit + Stanley</dd>
+              <dt>Vision</dt><dd>YOLO: stop signs, cones, gestures</dd>
+              <dt>Logged</dt><dd>Cross-track and heading error, steering, throttle, speed</dd>
+            </dl>
+            <ul class="points">
+              <li>Added waypoint persistence and linear rate limiting to the controller to reduce steering oscillation and cross-track error under GPS noise.</li>
+              <li>Used vision triggers for safe lane following and self-parking.</li>
+              <li>Recorded GNSS and IMU topics with rosbag and turned the pose traces into GPS waypoints for path tracking and parking.</li>
+            </ul>
+            <ul class="chips">
+              <li class="chip">ROS</li>
+              <li class="chip">YOLO</li>
+              <li class="chip">rosbag</li>
+              <li class="chip">GNSS / IMU</li>
+            </ul>
+          </article>
+
+          <article class="proj">
+            <p class="proj-top"><span>Statistics · STAT 207</span><span>Spring 2025</span></p>
+            <h3>Loan approval prediction</h3>
+            <p class="desc">A logistic regression model that predicts loan approval for a real Kaggle dataset of 4,269 applicants and shows which financial factors matter most.</p>
+            <dl class="spec">
+              <dt>Mean AUC</dt><dd>0.962 (5-fold cross-validation)</dd>
+              <dt>False positives</dt><dd>0.0062 rate</dd>
+              <dt>Top predictor</dt><dd>CIBIL score</dd>
+            </dl>
+            <ul class="points">
+              <li>Cleaned the data, detected outliers, engineered features, and addressed multicollinearity among numerical variables.</li>
+              <li>Chose the model with backward elimination and 5-fold cross-validation.</li>
+              <li>Proposed regularization and probability calibration to improve fairness and robustness.</li>
+            </ul>
+            <ul class="chips">
+              <li class="chip">Logistic regression</li>
+              <li class="chip">Feature engineering</li>
+              <li class="chip">Pandas</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
