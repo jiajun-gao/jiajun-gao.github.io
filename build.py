@@ -6,6 +6,7 @@ Writes every page as a full HTML document into the site folder. With ARTIFACT_HO
 writes the home page as a bare fragment there for a Claude artifact preview (its viewer
 adds the document skeleton).
 """
+import hashlib
 import sys
 from html import escape
 from pathlib import Path
@@ -69,6 +70,12 @@ def document_head(title, desc):
 """
 
 
+def asset_url(name):
+    # content fingerprint, so browsers holding a cached copy fetch the new file after a change
+    digest = hashlib.sha256((src / "assets" / name).read_bytes()).hexdigest()[:8]
+    return f"assets/{name}?v={digest}"
+
+
 def pager(slug):
     names = [p[0] for p in SUBPAGES]
     i = names.index(slug)
@@ -93,11 +100,11 @@ for slug, _, title, desc in PAGES:
         f"<title>{escape(title)}</title>\n"
         '<meta name="claude:viewport-fit-sides" content="cover">\n'
         f"{FONTS}\n"
-        '<link rel="stylesheet" href="assets/site.css">\n\n'
+        f'<link rel="stylesheet" href="{asset_url("site.css")}">\n\n'
         f"{page_nav}\n{body}\n"
         f"{'' if slug == 'index' else pager(slug)}"
         f"{footer}\n"
-        '<script src="assets/site.js"></script>\n'
+        f'<script src="{asset_url("site.js")}"></script>\n'
     )
     (site / f"{slug}.html").write_text(document_head(title, desc) + core + "</html>\n")
     if slug == "index" and artifact_home:
