@@ -140,9 +140,9 @@ body::before {
   text-decoration: none;
   font-family: var(--font-display);
   font-weight: 700;
-  font-stretch: 115%;
+  font-stretch: 92%;
   font-size: 1.0625rem;
-  letter-spacing: -.01em;
+  letter-spacing: .01em;
 }
 .nav-links { display: flex; gap: 2px; margin-left: auto; }
 .nav-links a {
@@ -208,10 +208,10 @@ body::before {
   margin-top: 16px;
   font-family: var(--font-display);
   font-weight: 800;
-  font-stretch: 125%;
-  font-size: clamp(2.5rem, 1.6rem + 3.6vw, 4.5rem);
+  font-stretch: 88%;
+  font-size: clamp(2.75rem, 1.8rem + 4vw, 5rem);
   line-height: 1;
-  letter-spacing: -.03em;
+  letter-spacing: .01em;
 }
 .name-zh {
   margin-left: .35em;
@@ -414,19 +414,19 @@ body::before {
 .sec-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-stretch: 115%;
+  font-stretch: 92%;
   font-size: 1.125rem;
-  letter-spacing: -.005em;
+  letter-spacing: .015em;
 }
 .sec-meta { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); }
 .sec-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; min-width: 0; }
 .headline {
   font-family: var(--font-display);
   font-weight: 700;
-  font-stretch: 112%;
+  font-stretch: 90%;
   font-size: clamp(1.75rem, 1.1rem + 2.2vw, 2.75rem);
   line-height: 1.08;
-  letter-spacing: -.02em;
+  letter-spacing: .005em;
   max-width: 24ch;
   text-wrap: balance;
 }
@@ -434,10 +434,10 @@ body::before {
 h3 {
   font-family: var(--font-display);
   font-weight: 650;
-  font-stretch: 106%;
+  font-stretch: 94%;
   font-size: 1.3125rem;
   line-height: 1.25;
-  letter-spacing: -.01em;
+  letter-spacing: .01em;
 }
 @media (max-width: 860px) {
   .section .inner { grid-template-columns: minmax(0, 1fr); }
@@ -483,10 +483,11 @@ h3 {
 .quote {
   font-family: var(--font-display);
   font-weight: 600;
-  font-stretch: 100%;
+  font-stretch: 94%;
   font-size: clamp(1.1875rem, 1rem + .7vw, 1.5rem);
   line-height: 1.35;
   max-width: 44ch;
+  letter-spacing: .005em;
 }
 
 /* diagram */
@@ -519,10 +520,10 @@ h3 {
 .readout .val {
   font-family: var(--font-display);
   font-weight: 700;
-  font-stretch: 112%;
+  font-stretch: 90%;
   font-size: clamp(1.75rem, 1.3rem + 1.2vw, 2.375rem);
   line-height: 1;
-  letter-spacing: -.02em;
+  letter-spacing: .01em;
   font-variant-numeric: tabular-nums;
 }
 .readout .val small { font-size: .5em; font-weight: 600; letter-spacing: 0; margin-left: 2px; }
@@ -676,10 +677,10 @@ h3 {
 .contact-title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-stretch: 125%;
+  font-stretch: 88%;
   font-size: clamp(2.25rem, 1rem + 5vw, 5rem);
   line-height: .95;
-  letter-spacing: -.03em;
+  letter-spacing: .01em;
   max-width: 14ch;
 }
 .contact-copy { font-size: 1.125rem; max-width: 52ch; opacity: .8; }
@@ -687,9 +688,9 @@ h3 {
 .email {
   font-family: var(--font-display);
   font-weight: 600;
-  font-stretch: 108%;
+  font-stretch: 94%;
   font-size: clamp(1.375rem, 1rem + 2.2vw, 2.5rem);
-  letter-spacing: -.02em;
+  letter-spacing: .005em;
   overflow-wrap: anywhere;
   text-decoration-color: color-mix(in srgb, var(--paper) 40%, transparent);
 }
@@ -732,10 +733,10 @@ h3 {
   margin-top: 14px;
   font-family: var(--font-display);
   font-weight: 800;
-  font-stretch: 125%;
-  font-size: clamp(2.25rem, 1.5rem + 3vw, 4rem);
+  font-stretch: 88%;
+  font-size: clamp(2.5rem, 1.6rem + 3.4vw, 4.5rem);
   line-height: 1;
-  letter-spacing: -.035em;
+  letter-spacing: .01em;
 }
 .page-lede { margin-top: 18px; max-width: 56ch; font-size: clamp(1.0625rem, 1rem + .4vw, 1.25rem); color: var(--ink-2); }
 .crumb a { text-decoration: none; }
@@ -755,10 +756,10 @@ h3 {
 .pl-name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-stretch: 115%;
+  font-stretch: 90%;
   font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem);
   line-height: 1.1;
-  letter-spacing: -.02em;
+  letter-spacing: .01em;
   transition: color .15s;
 }
 .pl-desc { color: var(--ink-2); max-width: 60ch; }
@@ -785,7 +786,7 @@ h3 {
 .pager a:hover { border-color: var(--ink); }
 .pager .next { grid-column: 2; text-align: right; }
 .pager .dir { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-.pager .to { font-family: var(--font-display); font-weight: 700; font-stretch: 112%; font-size: 1.375rem; letter-spacing: -.015em; }
+.pager .to { font-family: var(--font-display); font-weight: 700; font-stretch: 92%; font-size: 1.375rem; letter-spacing: .01em; }
 .pager a:hover .to { color: var(--accent-ink); }
 @media (max-width: 520px) {
   .pager .inner { grid-template-columns: minmax(0, 1fr); }
