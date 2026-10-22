@@ -27,7 +27,7 @@ PAGES = [
      "Jiajun Gao's experience: ECE 385 teaching assistant at the University of Illinois, algorithm "
      "intern at Shanghai AI Laboratory, and FPGA systems at the UIUC Digital Systems Design Lab."),
     ("research", "Research", "Research · Jiajun Gao",
-     "Jiajun Gao's research comparing WGAN-GP and WGAN-CP for image generation."),
+     "Research by Jiajun Gao."),
     ("education", "Education", "Education · Jiajun Gao",
      "Jiajun Gao's education: M.S. ECE and B.S. Computer Engineering (High Honors) at the "
      "University of Illinois Urbana-Champaign."),
